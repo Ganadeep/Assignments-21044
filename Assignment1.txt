@@ -1,0 +1,175 @@
+1.select JOB,ENAME
+  FROM EMP
+  WHERE JOB LIKE 'C%';
+-----------------------------------------------
+2.Select job,ename
+from emp
+where job ='clerk' or job = 'manager';
+-------------------------------------------------
+3. select SYSDATETIME() as Dateandtime; 
+           or
+    select GETDATE();
+-------------------------------------------------
+4.  select ename,job,sal
+    from emp
+    where sal between 500 and 1000;
+---------------------------------------------------
+5.select ename,job,sal,hiredate
+from emp
+where  hiredate like '____-12-%';
+-----------------------------------------------------
+6 select ename,job,sal
+  from emp
+  where sal not between 1000 and 2500;
+
+--------------------------------------------------------
+7.
+select ename,job,sal
+from emp
+where sal in (800,950,3000,5000);
+---------------------------------------------------------
+8.
+select ename,job,sal
+from emp
+where ename like '_L%';
+------------------------------------------------------------
+9.select ename,job,sal
+from emp
+where ename like '%d';
+-------------------------------------------------------------
+10
+select ename,job,sal
+from emp
+where  datalength(ename)=5;
+--------------------------------------------------------------
+11
+select ename,job,sal
+from emp
+where  ename like 't%r';
+--------------------------------------------------------------
+12
+select ename,job,sal
+from emp
+where  ename like '%a%';
+---------------------------------------------------------------
+13
+select ename,job,sal,hiredate
+from emp
+where  day(hiredate)<19;
+---------------------------------------------------------------
+14
+select ename,empno
+from emp
+where  ename='james';
+-----------------------------------------------------------------
+15
+select ename,empno,sal
+from emp
+where  ename='king';
+--------------------------------------------------------------------
+16
+select ename,empno,job
+from emp
+where  job='president';
+------------------------------------------------------------------------
+17
+select ename,empno,job,sal,comm,mgr
+from emp
+where  job='manager';
+--------------------------------------------------------------------------
+18 select *
+from emp
+where  comm is not null;
+----------------------------------------------------------------------------
+19
+SELECT ENAME,job,hiredate
+FROM EMP
+WHERE hiredate < ('01-apr-81');
+
+----------------------------------------------------------------------------
+20
+SELECT ENAME,SAL
+FROM EMP
+WHERE ENAME='KING' OR ENAME='BLAKE' OR ENAME='FORD' OR ENAME='SMITH';
+-----------------------------------------------------------------------------
+21
+SELECT ENAME,SAL
+FROM EMP
+WHERE SAL<3500;
+----------------------------------------------------------------------
+22
+SELECT ENAME,SAL,EMPNO,COMM,JOB,MGR
+FROM EMP
+WHERE JOB LIKE 'C%K';
+-------------------------------------------------------------------------
+23
+SELECT ENAME,EMPNO,COMM,JOB,MGR,
+SAL/30 AS 'ANNUAL SALARY'
+FROM EMP
+------------------------------------------------------------------------
+24
+SELECT ENAME,SAL+(SAL*20/100) AS'MONTHLY HIKE',(SAL+(SAL*20/100))*12 AS 'ANNUAL SALARY'
+FROM EMP
+WHERE ENAME='FORD';
+-----------------------------------------------------------------------
+25
+select deptno,sum(sal) as Maxsal
+from emp
+Group by deptno
+----------------------------------------------------------------------
+26
+SELECT DEPTNO,MIN(SAL) AS 'LOWEST SALARY'
+FROM EMP DEPT
+WHERE DEPTNO=10
+GROUP BY DEPTNO
+-----------------------------------------------------
+27
+SELECT  
+AVG(sal) AS 'Average'
+FROM emp
+WHERE job='manager'
+GROUP BY  job
+----------------------------------------------------
+28
+SELECT  sum(sal) AS 'totalsalary'
+FROM emp
+WHERE job='salesman'
+GROUP BY  job
+----------------------------------------------
+29
+SELECT DEPTNO,AVG(SAL) AS'LOWEST AVG SALARY'
+FROM EMP
+GROUP BY DEPTNO
+HAVING AVG(SAL)<(SELECT AVG(SAL) FROM EMP);
+---------------------------------------------------
+30
+SELECT JOB,COUNT(*) AS 'PERSONS'
+FROM EMP
+GROUP BY JOB
+---------------------------------------------------
+31
+SELECT  
+max(sal),ename
+FROM emp
+WHERE job='analyst'
+GROUP BY  job,ename
+-----------------------------------------------------
+32
+SELECT MAX(COMM)
+FROM EMP
+-------------------------------------------------------
+33
+SELECT COUNT(deptno)
+from dept
+-----------------------------------------------------------
+34
+SELECT Ename,job
+FROM EMP
+WHERE ENAME LIKE '__L%';
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+
+
+
+
